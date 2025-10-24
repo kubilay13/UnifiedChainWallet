@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnifiedChainWallet", "UnifiedChainWallet\UnifiedChainWallet.csproj", "{2C30B10A-F5EF-400B-8493-D953BB266AD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C30B10A-F5EF-400B-8493-D953BB266AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C30B10A-F5EF-400B-8493-D953BB266AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C30B10A-F5EF-400B-8493-D953BB266AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C30B10A-F5EF-400B-8493-D953BB266AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F7FD46B-5805-4843-B9BB-3FB2B2884D43}
+	EndGlobalSection
+EndGlobal
