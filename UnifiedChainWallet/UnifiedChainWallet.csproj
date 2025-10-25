@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NBitcoin" Version="9.0.3" />
+    <PackageReference Include="NBitcoin.Altcoins" Version="5.0.1" />
+    <PackageReference Include="Nethereum.Web3" Version="5.0.0" />
+    <PackageReference Include="Solnet.Wallet" Version="6.1.0" />
+    <PackageReference Include="TronNet" Version="0.2.0" />
+  </ItemGroup>
+
 </Project>
