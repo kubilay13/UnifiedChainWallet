@@ -19,29 +19,36 @@ NuGet üzerinden kolayca yüklenebilir ve geliştiricilere hızlı cüzdan üret
 
 ## 🚀 Özellikler
 
-- ✅ Bitcoin (Mainnet & Testnet) — Legacy, Nested SegWit, Bech32, HD Wallet (BIP44 / 49 / 84)
-- ✅ Litecoin (Mainnet & Testnet) — Legacy, Nested SegWit, Bech32, HD Wallet
-- ✅ Dogecoin (Mainnet & Testnet) — Legacy, HD Wallet
-- ✅ EVM tabanlı ağlar — Ethereum, BSC, Polygon, Arbitrum, Avalanche, Optimism, Pepe vb.
-- ✅ Tron & Solana cüzdan oluşturma
-- ✅ Mnemonic (seed phrase) destekli HD Wallet üretimi
-- ✅ Basit API, tek satırla kullanım
+## Desteklenen Ağlar ve Cüzdan Tipleri
+
+| Ağ | Tipler | Mainnet / Testnet |
+|----|--------|-----------------|
+| Bitcoin (BTC) | Legacy, Nested SegWit, Bech32, HD Wallet (BIP84) | Mainnet & Testnet |
+| Litecoin (LTC) | Legacy, Nested SegWit, Bech32, HD Wallet (BIP84) | Mainnet & Testnet |
+| Dogecoin (DOGE) | Legacy, HD Wallet | Mainnet & Testnet |
+| Ethereum ve EVM Tabanlı Ağlar | Standart HD Wallet | Ethereum, BSC, Polygon, Arbitrium, Pepe, Bttc |
+| TRON | Standart + Yerli Kütüphane | Mainnet & Testnet |
+| Solana (SOL) | Standart HD Wallet | Mainnet |
 
 ---
 
-## 📦 Kurulum (NuGet)
+NuGet:https://www.nuget.org/packages/UnifiedChainWallet
 
 ```bash
-dotnet add package UnifiedChainWallet
-
 using UnifiedChainWallet.Services.WalletService;
 
 // Bitcoin Mainnet örneği
 var btcMain = new BtcMainWalletService();
-var btcWallet = btcMain.CreateBtcBech32Wallet();
 
-Console.WriteLine(btcWallet.Address);
-Console.WriteLine(btcWallet.PrivateKey);
+var legacy = btcMain.CreateBtcLegacyWallet();
+var nested = btcMain.CreateBtcNestedSegWitWallet();
+var bech32 = btcMain.CreateBtcBech32Wallet();
+var hd = btcMain.CreateBtcHdWallet("84");
+
+Console.WriteLine($"Legacy: {legacy.Address}");
+Console.WriteLine($"Nested SegWit: {nested.Address}");
+Console.WriteLine($"Bech32: {bech32.Address}");
+Console.WriteLine($"HD Wallet: {hd.Address}, Mnemonic: {hd.Mnemonic}");
 
 // EVM örneği (Ethereum, BSC, Polygon vb.)
 var evm = new EvmWalletService();
@@ -50,6 +57,10 @@ var ethWallet = evm.EvmCreateWallet("Ethereum");
 // Tron örneği
 var tron = new TronWalletService();
 var tronWallet = tron.TronCreateWallet();
+
+// tron yerli kütüphane örneği
+var tronNative = new TronCreateWalletNativeLibrary();
+PrintWallet(tronNative.TronCreateWalletNative());
 
 // Solana örneği
 var sol = new SolWalletService();
@@ -60,11 +71,14 @@ var solWallet = sol.SolCreateWallet();
 ## 🧩 Kullanılan Kütüphaneler
 
 ```bash
+
 NBitcoin
 
-Nethereum.Signer
+Nethereum
 
 Solnet.Wallet
+
+TronAksaSharp
 
 TronNet
 
@@ -110,7 +124,7 @@ Private Key: 0x74a3...
 ```bash
 MIT License
 
-Copyright (c) 2025 Kubilay Efe Akdoğan
+Copyright (c) 2026 Kubilay13
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
