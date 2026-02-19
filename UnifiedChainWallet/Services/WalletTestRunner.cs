@@ -61,6 +61,11 @@ namespace UnifiedChainWallet.Services
             var tron = new TronWalletService();
             PrintWallet(tron.TronCreateWallet());
 
+            //TRON YERLİ KÜTÜPHANE
+            var tronNative = new TronCreateWalletNativeLibrary();
+            PrintWallet(tronNative.TronCreateWalletNative());
+
+
             // SOL
             var sol = new SolWalletService();
             PrintWallet(sol.SolCreateWallet());

@@ -1,4 +1,5 @@
-﻿using TronNet;
+﻿using TronAksaSharp.Wallet;
+using TronNet;
 using UnifiedChainWallet.Models;
 
 namespace UnifiedChainWallet.Services.WalletService
